@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+  <!-- 顶栏 -->
+  <header class="top-nav">
+    <div class="top-nav-container">
+      <a href="#home"><b>Homepage</b></a>
+      <a href="#about">About Me</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#educations">Education</a>
+      <a href="#internships">Internships</a>
+      <a href="#services">Service</a> 
+      <a href="#honors">Honors</a>
+    </div>
+  </header>
+
+  <div id="home" style="position: absolute; top: 0;"></div>
+
+  <div class="page-wrapper">
+    <!-- 侧边栏 -->
+    <aside class="sidebar">
+        <div class="avatar">
+        <!-- 如果有图片显示图片，否则显示首字母 -->
+        {% if site.data.profile.avatar %}
+            <img src="{{ site.data.profile.avatar }}" alt="Avatar">
+        {% else %}
+            {{ site.data.profile.avatar_text }}
+        {% endif %}
+        </div>
+        <h1>{{ site.data.profile.name }}</h1>
+        <p>{{ site.data.profile.title }}</p>
+        <p>{{ site.data.profile.institution }}</p>
+        
+        <div class="social-links">
+            <a><i class="fas fa-map-marker-alt"></i> {{ site.data.profile.address }}</a>
+            <a href="mailto:{{ site.data.profile.email }}" target="_blank"><i class="fas fa-envelope"></i> Email</a>
+            <a href="{{ site.data.profile.google_scholar }}" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="{{ site.data.profile.github }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            {% if site.data.profile.dblp %}
+            <a href="{{ site.data.profile.dblp }}" target="_blank"><i class="ai ai-dblp"></i> DBLP</a>
+            {% endif %}
+        </div>
+    </aside>
+    
+    <!-- 主内容区 -->
+    <main class="main-content">
+      {{ content }}
+    </main>
+  </div>
+
+  <script>
+    // 平滑滚动优化
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+---
+layout: default
+title: Homepage
+---
+
+<!-- 1. About Me -->
+<section id="about">
+  <h2><i class="fa-solid fa-user"></i> About Me</h2>
+  <div class="bio-text">
+    {{ site.data.profile.bio | markdownify }}
+  </div>
+</section>
+
+<!-- 2. News -->
+<section id="news">
+  <h2><i class="fa-solid fa-fire"></i> News</h2>
+  <div class="list-container">
+    {% for item in site.data.news limit: 5 %}
+    <div class="entry-item">
+      <div class="entry-left">{{ item.date }}</div>
+      <div class="entry-right">
+        {{ item.emoji }} {{ item.content }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- 3. Publications -->
+<section id="publications">
+    <h2><i class="fa-solid fa-file-lines"></i> Selected Publications</h2>
+    
+    <div class="entry-item">
+    <div class="pub-footer">
+    <p>
+        <!-- (* Equal contribution; -->
+        (For a full list of publications, please visit my 
+        <a href="{{ site.data.profile.google_scholar }}" target="_blank">Google Scholar</a> or 
+        <a href="{{ site.data.profile.dblp }}" target="_blank">DBLP</a>.)
+    </p>
+    </div>
+    </div>
+    
+    <div class="pub-list">
+      {% for pub in site.data.publications %}
+      <div class="entry-item">
+        <!-- 左侧：标签 + 链接按钮 -->
+        <div class="entry-left">
+          <span class="pub-venue-tag">{{ pub.venue }} {{ pub.year }}</span>
+          
+          <div class="pub-links-sidebar">
+            {% if pub.paper_url %}
+              <a href="{{ pub.paper_url }}" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+            {% endif %}
+            {% if pub.code_url %}
+              <a href="{{ pub.code_url }}" target="_blank"><i class="fab fa-github"></i> Code</a>
+            {% endif %}
+            {% if pub.project_url %}
+              <a href="{{ pub.project_url }}" target="_blank"><i class="fas fa-globe"></i> Project</a>
+            {% endif %}
+          </div>
+        </div>
+  
+        <!-- 右侧：标题 + 作者 -->
+        <div class="entry-right">
+          <div class="pub-title">
+            <a href="{{ pub.paper_url }}" target="_blank">{{ pub.title }}</a>
+            {% if pub.award %}
+              <span class="pub-award-text">({{ pub.award }})</span>
+            {% endif %}
+          </div>
+          <div class="pub-authors">
+            {% assign my_name = site.data.profile.name %}
+            {% capture bold_name %}<strong>{{ my_name }}</strong>{% endcapture %}
+            {{ pub.authors | replace: my_name, bold_name }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+<!-- 4. Education -->
+<section id="educations">
+  <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+  {% for edu in site.data.education %}
+  <div class="entry-item">
+    <div class="entry-left">{{ edu.period }}</div>
+    <div class="entry-right">
+      <strong>{{ edu.school }}</strong>, {{ edu.degree }}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<!-- 5. Internships -->
+<section id="internships">
+  <h2><i class="fa-solid fa-briefcase"></i> Internships</h2>
+  {% for job in site.data.internships %}
+  <div class="entry-item">
+    <div class="entry-left">{{ job.period }}</div>
+    <div class="entry-right">
+      <strong>{{ job.company }}</strong>, {{ job.role }}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<!-- 7. Service 部分 -->
+
+<section id="services">
+<h2><i class="fa-solid fa-handshake-angle"></i> Professional Service</h2>
+<!-- <div class="list-container"> -->
+{% for service in site.data.services %}
+<div class="entry-item">
+<!-- 左侧：类别 -->
+<div class="entry-left">
+    <span class="service-tag">{{ service.category }}</span>
+</div>
+<!-- 右侧：列表内容 -->
+<div class="entry-right">
+    <ul class="service-list">
+    {% for item in service.items %}
+    <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+</div>
+</div>
+{% endfor %}
+<!-- </div> -->
+</section>
+
+<!-- 6. Honors -->
+<section id="honors">
+  <h2><i class="fa-solid fa-medal"></i> Honors and Awards</h2>
+  {% for honor in site.data.honors %}
+  <div class="entry-item">
+    <div class="entry-left">{{ honor.date }}</div>
+    <div class="entry-right">{{ honor.title }}</div>
+  </div>
+  {% endfor %}
+</section>

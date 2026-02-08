@@ -1,0 +1,31 @@
+name: "Xichen Ye"
+title: "Ph.D. Student"
+institution: "Fudan University"
+address: "Shanghai, China"
+email: "yexichen0930 (at) outlook (dot) com"
+google_scholar: "https://scholar.google.com/citations?user=EkqyGmoAAAAJ"
+github: "https://github.com/xichenye0930"
+dblp: "https://dblp.org/pid/352/8650" # 新增这一行
+avatar: "/assets/images/avatar.jpg" # 头像图片路径
+avatar_text: "X" # 如果没照片，显示的头像首字母
+bio: |
+  I am a first-year Ph.D. student at the
+  <a class="bio-link" href="https://ai.fudan.edu.cn" target="_blank">College of Computer Science and Artificial Intelligence</a>,
+  <a class="bio-link" href="https://www.fudan.edu.cn" target="_blank">Fudan University</a>,
+  where I am co-advised by
+  <a class="bio-link" href="https://cjinfdu.github.io" target="_blank">Prof. Cheng Jin</a>
+  and
+  <a class="bio-link" href="https://weizhonz.github.io" target="_blank">Prof. Weizhong Zhang</a>.
+  Prior to joining Fudan, I earned my Master’s degree from the
+  <a class="bio-link" href="https://cs.shu.edu.cn" target="_blank">School of Computer Engineering and Science</a>
+  at
+  <a class="bio-link" href="https://www.shu.edu.cn" target="_blank">Shanghai University</a>,
+  under the supervision of
+  <a class="bio-link" href="https://scholar.google.com/citations?user=JGm4z4YAAAAJ" target="_blank">Prof. Xiaoqiang Li</a>
+  and
+  <a class="bio-link" href="https://www.shu.edu.cn/info/1611/75785.htm" target="_blank">Prof. Weiqin Tong</a>.
+
+  My research focuses on Efficient and Trustworthy Machine Learning (e.g., sample selection, data attribution, and noisy label learning)
+  as well as its applications (e.g., diffusion models).
+  I have published several papers in top-tier conferences, including ICML, NeurIPS, and CVPR.
+  Please feel free to reach out if you are interested in my work or want to collaborate on research projects.

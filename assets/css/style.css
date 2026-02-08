@@ -1,0 +1,227 @@
+/* ==========================================================================
+   1. 基础配置与全局样式
+   ========================================================================== */
+   :root {
+    --top-nav-height: 60px;
+    --sidebar-width: 280px;
+    --primary-color: #1a5fb4; 
+    --text-main: #333;
+    --text-muted: #666;
+    --bg-light: #f8f9fa;
+    --border-color: #eee;
+    --left-column-width: 160px; 
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    color: var(--text-main);
+    background-color: #fff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 顶栏：毛玻璃效果 */
+.top-nav {
+    position: fixed;
+    top: 0; width: 100%; height: var(--top-nav-height);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex; justify-content: center; z-index: 1000;
+}
+.top-nav-container {
+    width: 100%; max-width: 1100px;
+    display: flex; align-items: center; padding: 0 20px;
+}
+.top-nav a {
+    text-decoration: none; color: var(--text-muted);
+    font-weight: 500; margin-right: 25px; font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+.top-nav a:hover { color: var(--primary-color); }
+
+/* 页面容器 */
+.page-wrapper {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: var(--top-nav-height) auto 0;
+    padding: 50px 20px;
+    gap: 50px;
+}
+
+/* ==========================================================================
+   2. 左侧侧边栏 (Sidebar)
+   ========================================================================== */
+.sidebar {
+    width: var(--sidebar-width);
+    position: sticky; top: 100px; height: fit-content;
+    padding-top: 0;
+    margin-top: 0;
+}
+.avatar {
+    width: 200px; height: 200px; border-radius: 50%;
+    background: var(--primary-color); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 70px; font-weight: bold; margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-top: 0;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.sidebar h1 { font-size: 1.8rem; margin: 0 0 8px; color: #111; font-weight: 800; }
+.sidebar p { color: var(--text-muted); margin: 4px 0; font-size: 0.95rem; }
+
+.social-links { margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px; }
+.social-links a { 
+    display: flex; align-items: center; color: var(--text-main); 
+    text-decoration: none; margin-bottom: 12px; font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+.social-links a:hover { color: var(--primary-color); }
+
+/* 侧边栏图标垂直对齐核心 */
+.social-links i, .social-links .ai { 
+    width: 28px; display: inline-flex; justify-content: center; 
+    align-items: center; margin-right: 12px; font-size: 1.1rem; 
+    color: var(--primary-color); opacity: 0.85; flex-shrink: 0;
+}
+
+/* ==========================================================================
+   3. 主内容区 (Main Content)
+   ========================================================================== */
+.main-content { flex: 1; min-width: 0; }
+section { margin-bottom: 60px; scroll-margin-top: 90px; }
+h2 {
+    font-size: 1.5rem; border-bottom: 2px solid #f2f2f2;
+    padding-bottom: 10px; margin-bottom: 25px;
+    color: #222; display: flex; align-items: center; gap: 12px;
+}
+
+.main-content section:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.main-content section:first-child h2 {
+    margin-top: -5px;
+    padding-top: 0;/* 进一步消除行高产生的微小顶部间隙 */
+}
+
+/* 统一条目布局 (Entry Item) */
+.entry-item { display: flex; margin-bottom: 15px; row-gap: 5px; column-gap: 20px; align-items: flex-start; }
+.entry-left {
+    width: var(--left-column-width); flex-shrink: 0;
+    display: flex; flex-direction: column; align-items: flex-start;
+    gap: 4px; font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem; color: var(--text-muted); padding-top: 4px;
+}
+.entry-right {
+    flex: 1;
+}
+
+
+/* 两端对齐 Bio */
+.bio-text { text-align: justify; text-justify: inter-word; color: #444; }
+.bio-text p { margin-bottom: 1.2em; }
+.bio-link {
+    font-weight: 500;
+    color: var(--primary-color);
+    text-decoration: none;
+    /* border-bottom: 1px dashed #ccc; */
+}
+.bio-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   4. 专项组件样式 (Pubs, Service, etc.)
+   ========================================================================== */
+/* 标签通用样式 */
+.pub-venue-tag, .service-tag {
+    display: inline-block; padding: 2px 10px; border-radius: 4px;
+    font-size: 0.75rem; font-weight: bold; text-align: center;
+}
+.pub-venue-tag { background: var(--primary-color); color: #fff; }
+.service-tag { border: 1px solid var(--primary-color); color: var(--primary-color); background: #fff; width: 100%; box-sizing: border-box; }
+
+.pub-footer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1;
+}
+
+.pub-footer p {
+    margin: 0px 0;
+}
+
+.pub-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.pub-footer a:hover {
+    text-decoration: underline;
+}
+
+/* 论文样式 */
+.pub-title a { color: var(--primary-color); text-decoration: none; font-weight: 700; font-size: 1.05rem; }
+.pub-authors { font-size: 0.95rem; color: #555; margin: 4px 0; }
+.pub-authors strong { color: #000; font-weight: 700; border-bottom: 1px solid #ccc; }
+.pub-award-text { color: #d93025; font-weight: bold; font-size: 0.9rem; margin-left: 5px; }
+
+/* 论文按钮组 */
+.pub-links-sidebar { display: flex; flex-direction: row; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.pub-links-sidebar a {
+    display: inline-flex; align-items: center; background-color: var(--bg-light);
+    color: var(--text-muted); text-decoration: none; font-size: 0.7rem;
+    font-weight: 600; padding: 3px 8px; border-radius: 4px;
+    border: 1px solid #eee; transition: all 0.2s ease; white-space: nowrap;
+}
+.pub-links-sidebar a:hover { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
+.pub-links-sidebar i { margin-right: 4px; font-size: 0.75rem; }
+
+/* Service 列表样式 */
+.service-list { list-style: none; padding: 0; margin: 0; }
+.service-list li { position: relative; padding-left: 15px; margin-top: 5px; font-size: 0.95rem; }
+.service-list li::before { content: "•"; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
+
+/* ==========================================================================
+   5. 响应式布局 (Mobile)
+   ========================================================================== */
+@media (max-width: 850px) {
+    .page-wrapper { flex-direction: column; padding: 20px 15px; gap: 30px; }
+    
+    .top-nav-container { justify-content: flex-start; overflow-x: auto; white-space: nowrap; padding: 0 10px; }
+    .top-nav-container::-webkit-scrollbar { display: none; }
+    .top-nav a { margin-right: 20px; font-size: 0.85rem; }
+
+    .sidebar { width: 100%; position: static; display: flex; flex-direction: column; align-items: center; }
+    
+    /* 社交链接块整体居中但内部图标对齐 */
+    .social-links { width: fit-content; margin: 20px auto 0; align-items: flex-start; }
+    
+    h2 { justify-content: center; font-size: 1.3rem; }
+
+    .main-content section:first-child h2 {
+        margin-top: 0;
+        padding-top: 0;/* 进一步消除行高产生的微小顶部间隙 */
+    }
+
+    /* 条目改为堆叠，且内容居中 */
+    .entry-item { flex-direction: column; align-items: center; text-align: center; margin-bottom: 25px; }
+    .entry-left { width: 100% !important; align-items: center !important; }
+    .pub-links-sidebar { justify-content: center !important; }
+    .service-tag { width: fit-content; margin: 0 auto; }
+    .service-list { display: inline-block; text-align: left; margin: 0 auto; }
+
+    .pub-footer {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+}

@@ -1,0 +1,10 @@
+title: Xichen Ye's Homepage
+email: yexichen0930@outlook.com
+description: Xichen Ye's Homepage
+baseurl: "" 
+url: "https://xichenye0930.github.io"
+
+# 启用集合（可选，如果你想让论文管理更专业）
+collections:
+  publications:
+    output: false # 单页模式下不需要生成独立页面
