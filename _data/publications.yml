@@ -1,3 +1,10 @@
+- title: "Distill on a Diet: Efficient Knowledge Distillation via Learnable Data Pruning"
+  authors: "Yifan Wu*, Yiqi Wang*, Xichen Ye*, Wenjing Yan, Xiaoqiang Li, Cheng Jin, Xiangyu Yue, Weizhong Zhang"
+  venue: "ECCV"
+  year: "2026"
+  paper_url: "https://arxiv.org/abs/2606.25488"
+  code_url: "https://github.com/yifanwu-victor/Distill-on-a-Diet"
+
 - title: "Towards Robust Influence Functions with Flat Validation Minima"
   authors: "Xichen Ye, Yifan Wu, Weizhong Zhang, Cheng Jin, Yifan Chen"
   venue: "ICML"

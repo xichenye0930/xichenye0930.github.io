@@ -25,7 +25,7 @@ bio: |
   and
   <a class="bio-link" href="https://www.shu.edu.cn/info/1611/75785.htm" target="_blank">Prof. Weiqin Tong</a>.
 
-  My research focuses on Efficient and Trustworthy Machine Learning (e.g., sample selection, data attribution, and noisy label learning)
-  as well as its applications (e.g., diffusion models).
-  I have published several papers in top-tier conferences, including ICML, NeurIPS, and CVPR.
+  My current research focuses on efficient inference for diffusion and video generative models, including cache reuse and KV-cache selection.
+  Previously, I worked on data attribution and sample selection, with a particular focus on reliable influence estimation, and earlier on robust learning under noisy supervision.
+  My work has been published at ICML, NeurIPS, CVPR, AAAI, and ECCV.
   Please feel free to reach out if you are interested in my work or want to collaborate on research projects.
